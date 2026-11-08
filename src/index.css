@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
+  --font-sans: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --color-brand-green: #15472A;
+  --color-brand-green-dark: #0D2D1B;
+  --color-brand-green-light: #1E613A;
+  --color-brand-red: #C52C24;
+  --color-brand-red-dark: #A52019;
+  --color-brand-gold: #D49B28;
+  --color-brand-gold-light: #E9BF67;
+  --color-brand-cream: #FAF7F2;
+  --color-brand-cream-warm: #F3ECE1;
+  --color-brand-dark: #141715;
+}
+
+:root {
+  --brand-green: #15472A;
+  --brand-green-dark: #0D2D1B;
+  --brand-red: #C52C24;
+  --brand-gold: #D49B28;
+  --brand-cream: #FAF7F2;
+  --brand-dark: #141715;
+}
+
+body {
+  font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  background-color: #FAF7F2;
+  color: #1F221E;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure mobile form fields never cause iOS viewport auto-zoom */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Scroll margin offset so sticky navbar and category tabs never cover headings */
+[id] {
+  scroll-margin-top: 140px;
+}
+
+/* Subtle Mughlai arch silhouette */
+.mughal-arch {
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+/* Subtle Mughal-inspired pattern for dark sections */
+.dark-mughal-pattern {
+  background-image: radial-gradient(rgba(212, 155, 40, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Subtle 3.5% grain texture overlay */
+.subtle-grain {
+  position: relative;
+}
+.subtle-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* Three-iteration pulse ring for delivery numbers */
+@keyframes pulseThreeTimes {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.pulse-ring-3 {
+  animation: pulseThreeTimes 1.4s ease-out 3 forwards;
+}
+
+/* Arch-shaped top clip path */
+.arch-clip {
+  clip-path: ellipse(85% 100% at 50% 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D49B28;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #15472A;
+}

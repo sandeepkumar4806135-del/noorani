@@ -1,0 +1,6 @@
+{
+  "name": "Noorani Restaurant - Indian, Mughlai, Chinese & Tandoori",
+  "description": "Noorani Family Restaurant in Mumbra, Thane serving authentic Indian, Mughlai, Chinese, and fresh Tandoori specialties.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
