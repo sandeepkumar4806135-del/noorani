@@ -394,7 +394,7 @@ export const ContactPage: React.FC = () => {
                 whileInView={motionLevel === "off" ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-md overflow-hidden border-2 border-[#D49B28] bg-white shadow-md aspect-[16/10]"
+                className="rounded-md overflow-hidden border-2 border-[#D49B28] bg-white shadow-md h-72 sm:h-80 lg:h-96 w-full"
               >
                 <iframe
                   title="Noorani Family Restaurant Location Map Mumbra"

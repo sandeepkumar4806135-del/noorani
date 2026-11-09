@@ -140,7 +140,7 @@ export const WhatWeCookStory: React.FC = () => {
 
   return (
     <section className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#E6DEC9] relative">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         
         {/* Section Heading */}
         <div className="mb-12 sm:mb-16">

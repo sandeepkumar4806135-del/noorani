@@ -24,19 +24,22 @@
   --brand-dark: #141715;
 }
 
+/* Prevent sideways horizontal overflow without breaking sticky positioning */
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
   background-color: #FAF7F2;
   color: #1F221E;
-}
-
-h1, h2, h3, h4, .font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 /* Ensure mobile form fields never cause iOS viewport auto-zoom */

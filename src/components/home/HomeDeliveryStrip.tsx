@@ -19,7 +19,7 @@ import { siteConfig } from "../../data/siteConfig";
 export const HomeDeliveryStrip: React.FC = () => {
   return (
     <section className="bg-[#FAF4E6] border-y border-[#E4D8BE] py-8 sm:py-10">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         
         {/* Header line */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
@@ -51,15 +51,15 @@ export const HomeDeliveryStrip: React.FC = () => {
           {/* View Menu CTA */}
           <Link
             to="/menu"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#15472A] hover:bg-[#0D2D1B] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shadow-xs min-h-[44px] shrink-0 active:scale-[0.99]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#15472A] hover:bg-[#0D2D1B] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shadow-xs min-h-[44px] shrink-0 active:scale-[0.99]"
           >
             <span>View Menu & Order</span>
             <ArrowRight className="w-4 h-4 text-[#E8C872]" />
           </Link>
         </div>
 
-        {/* Four Number Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        {/* Four Number Cards: 1 col on phones, 2 cols on 600px, 4 cols on >=1024px */}
+        <div className="grid grid-cols-1 min-[560px]:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           {siteConfig.deliveryPhones.map((del, idx) => (
             <a
               key={del.id}

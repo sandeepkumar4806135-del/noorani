@@ -149,7 +149,7 @@ export const HeroPlateSection: React.FC = () => {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* ══════════════════════════════════════════════════════════
@@ -164,7 +164,7 @@ export const HeroPlateSection: React.FC = () => {
             >
               <svg
                 viewBox="0 0 400 440"
-                className="w-full max-w-[340px] sm:max-w-[420px] h-auto opacity-35"
+                className="w-full max-w-[300px] sm:max-w-[420px] h-auto opacity-35"
                 fill="none"
               >
                 {/* Mughlai Cusped Arch Silhouette */}
@@ -181,7 +181,7 @@ export const HeroPlateSection: React.FC = () => {
             {/* Plate Wrapper (responds to scroll exit scale) */}
             <motion.div
               style={motionLevel === "full" ? { scale: plateScale } : undefined}
-              className="relative flex items-center justify-center w-[270px] h-[270px] sm:w-[350px] sm:h-[350px] lg:w-[390px] lg:h-[390px]"
+              className="relative flex items-center justify-center w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[390px] lg:h-[390px] max-w-[70vw] max-h-[70vw] sm:max-w-none sm:max-h-none"
             >
               {/* Soft Elliptical Contact Shadow Beneath Plate */}
               <div
@@ -539,7 +539,7 @@ export const HeroPlateSection: React.FC = () => {
 
             {/* Action Buttons: Stacked on mobile, magnetic hover on desktop */}
             <div className="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-              <MagneticWrapper>
+              <MagneticWrapper className="w-full sm:w-auto">
                 <Link
                   to="/menu"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#D49B28] hover:bg-[#B37E1C] text-[#141715] text-sm font-semibold rounded-xs shadow-md transition-all active:scale-[0.99] min-h-[46px]"
@@ -549,7 +549,7 @@ export const HeroPlateSection: React.FC = () => {
                 </Link>
               </MagneticWrapper>
 
-              <MagneticWrapper>
+              <MagneticWrapper className="w-full sm:w-auto">
                 <Link
                   to="/reservations"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C52C24] hover:bg-[#A6211A] text-white text-sm font-semibold rounded-xs shadow-md transition-all active:scale-[0.99] min-h-[46px]"
@@ -559,7 +559,7 @@ export const HeroPlateSection: React.FC = () => {
                 </Link>
               </MagneticWrapper>
 
-              <MagneticWrapper>
+              <MagneticWrapper className="w-full sm:w-auto">
                 <a
                   href={siteConfig.phoneLink}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#FAF7F2] hover:text-[#E8C872] px-4 py-3 rounded-xs min-h-[46px] transition-colors"

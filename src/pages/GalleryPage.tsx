@@ -66,23 +66,23 @@ export const GalleryPage: React.FC = () => {
             <span>Images are for illustration.</span>
           </div>
 
-          {/* Mixed-Size Masonry Grid */}
+          {/* Mixed-Size Masonry Grid: 2 cols on mobile, 3 on tablet, 12 on desktop */}
           <motion.div
             variants={motionLevel === "off" ? undefined : staggerContainerVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-3 sm:gap-5 lg:gap-6 items-stretch"
           >
             {foodPhotos.map((photo, idx) => {
               // Asymmetric masonry spans for natural visual hierarchy
               const isLarge = idx === 0 || idx === 7;
               const isMedium = idx === 1 || idx === 4 || idx === 8;
               const colSpan = isLarge
-                ? "sm:col-span-2 lg:col-span-8"
+                ? "col-span-2 md:col-span-2 lg:col-span-8"
                 : isMedium
-                ? "lg:col-span-4"
-                : "lg:col-span-4";
+                ? "col-span-1 md:col-span-1 lg:col-span-4"
+                : "col-span-1 md:col-span-1 lg:col-span-4";
 
               const aspectRatio = isLarge ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]";
 
@@ -120,14 +120,14 @@ export const GalleryPage: React.FC = () => {
                     </div>
 
                     {/* Caption Bar */}
-                    <div className="p-3.5 sm:p-4 bg-white border-t border-[#F0EAE0] flex items-center justify-between">
-                      <div>
-                        <h3 className="font-serif font-bold text-sm sm:text-base text-[#15472A] group-hover:text-[#C52C24] transition-colors">
+                    <div className="p-2.5 sm:p-4 bg-white border-t border-[#F0EAE0] flex items-center justify-between">
+                      <div className="min-w-0 pr-1">
+                        <h3 className="font-serif font-bold text-xs sm:text-base text-[#15472A] group-hover:text-[#C52C24] transition-colors truncate">
                           {photo.title}
                         </h3>
-                        <p className="text-[11px] text-[#71786C] mt-0.5 line-clamp-1">{photo.alt}</p>
+                        <p className="text-[10px] sm:text-[11px] text-[#71786C] mt-0.5 line-clamp-1">{photo.alt}</p>
                       </div>
-                      <span className="text-xs font-semibold text-[#B37E1C] uppercase tracking-wider shrink-0 ml-2">
+                      <span className="hidden sm:inline-block text-xs font-semibold text-[#B37E1C] uppercase tracking-wider shrink-0 ml-2">
                         View &rarr;
                       </span>
                     </div>

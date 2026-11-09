@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
     hasValidSocialLink(siteConfig.socialLinks.swiggy);
 
   return (
-    <footer className="relative bg-[#0E2818] text-[#FAF7F2] pt-0 pb-24 md:pb-12 overflow-hidden">
+    <footer className="relative bg-[#0E2818] text-[#FAF7F2] pt-0 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-12 overflow-hidden">
       {/* ── 1. Ornamental Top Edge (Scalloped Cusped Arch Pattern) ── */}
       <div className="w-full overflow-hidden leading-none select-none pointer-events-none" aria-hidden="true">
         <svg
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 pt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-[#1C462B] relative z-10">
           
           {/* Column 1: Brand Info */}
@@ -141,15 +141,15 @@ export const Footer: React.FC = () => {
               <p className="text-xs text-[#B5C4B9]">
                 Direct delivery lines across Mumbra & Kausa (tap to call):
               </p>
-              <div className="grid grid-cols-2 gap-2 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 {siteConfig.deliveryPhones.map((del) => (
                   <a
                     key={del.id}
                     href={del.link}
-                    className="inline-flex items-center gap-1.5 bg-[#143B22] hover:bg-[#1C4E2D] p-2.5 rounded min-h-[44px] text-[#FAF7F2] hover:text-[#E8C872] transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#143B22] hover:bg-[#1C4E2D] p-2.5 rounded min-h-[44px] text-[#FAF7F2] hover:text-[#E8C872] transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5 text-[#C52C24] shrink-0" />
-                    <span className="font-semibold">{del.number}</span>
+                    <span className="font-semibold tabular-nums">{del.number}</span>
                   </a>
                 ))}
               </div>

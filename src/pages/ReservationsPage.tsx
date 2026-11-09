@@ -216,12 +216,12 @@ export const ReservationsPage: React.FC = () => {
                 <p className="mb-3">
                   We provide free home delivery across Mumbra & Kausa. Call any of our four lines:
                 </p>
-                <div className="grid grid-cols-2 gap-2 font-bold text-[#15472A]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-bold text-[#15472A]">
                   {siteConfig.deliveryPhones.map((del) => (
                     <a
                       key={del.id}
                       href={del.link}
-                      className="bg-white border border-[#DACDB3] px-2.5 py-2 rounded text-center hover:border-[#15472A] text-[11px] min-h-[44px] flex items-center justify-center"
+                      className="bg-white border border-[#DACDB3] px-3 py-2.5 rounded text-center hover:border-[#15472A] text-xs min-h-[44px] flex items-center justify-center tabular-nums shadow-2xs"
                     >
                       {del.number}
                     </a>

@@ -32,11 +32,11 @@ export const FloatingActions: React.FC = () => {
       {/* ── 2. Mobile-Only Sticky Bottom Bar (Height ~56px, compliant with 15% cap) ── */}
       <nav
         aria-label="Mobile quick actions"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#FAF7F2]/98 backdrop-blur-md border-t border-[#E0D7C2] px-4 py-2 shadow-2xl flex items-center gap-3"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#FAF7F2]/98 backdrop-blur-md border-t border-[#E0D7C2] px-4 pt-2 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-2xl flex items-center gap-3"
       >
         <a
           href={siteConfig.phoneLink}
-          className="flex-1 min-h-[44px] flex items-center justify-center gap-2 bg-[#15472A] active:bg-[#0D2D1B] text-white py-2 px-3 rounded-md text-xs font-semibold shadow-xs"
+          className="flex-1 min-h-[46px] flex items-center justify-center gap-2 bg-[#15472A] active:bg-[#0D2D1B] text-white py-2.5 px-3 rounded-md text-xs font-semibold shadow-xs active:scale-[0.98] transition-transform"
         >
           <Phone className="w-4 h-4 text-[#E8C872]" />
           <span>Call Now</span>
@@ -46,7 +46,7 @@ export const FloatingActions: React.FC = () => {
           href={siteConfig.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 min-h-[44px] flex items-center justify-center gap-2 bg-[#25D366] active:bg-[#1EBE5D] text-white py-2 px-3 rounded-md text-xs font-semibold shadow-xs"
+          className="flex-1 min-h-[46px] flex items-center justify-center gap-2 bg-[#25D366] active:bg-[#1EBE5D] text-white py-2.5 px-3 rounded-md text-xs font-semibold shadow-xs active:scale-[0.98] transition-transform"
         >
           <MessageCircle className="w-4 h-4 fill-current" />
           <span>WhatsApp</span>

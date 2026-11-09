@@ -26,7 +26,7 @@ export const Container: React.FC<ContainerProps> = ({
 
   return (
     <div
-      className={`mx-auto w-full px-5 sm:px-6 lg:px-8 ${sizeClasses} ${className}`}
+      className={`mx-auto w-full px-5 md:px-8 lg:px-12 ${sizeClasses} ${className}`}
       {...props}
     >
       {children}

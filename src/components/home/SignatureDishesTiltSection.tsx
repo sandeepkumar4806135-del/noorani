@@ -155,7 +155,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ dish }) => {
 export const SignatureDishesTiltSection: React.FC = () => {
   return (
     <section className="py-14 sm:py-24 bg-[#F4EFE6] border-y border-[#E6DEC9] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
@@ -169,7 +169,7 @@ export const SignatureDishesTiltSection: React.FC = () => {
           </div>
           <Link
             to="/menu"
-            className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#15472A] text-[#15472A] hover:bg-[#15472A] hover:text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shrink-0 self-start md:self-auto min-h-[44px]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-[#15472A] text-[#15472A] hover:bg-[#15472A] hover:text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shrink-0 self-start md:self-auto min-h-[44px]"
           >
             <span>See All Menu Items</span>
             <ArrowRight className="w-4 h-4" />
@@ -183,12 +183,12 @@ export const SignatureDishesTiltSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Scroll-Snap Carousel (Center-Focused, Zero Tilt Overhead) */}
+        {/* Mobile Scroll-Snap Carousel (Center-Focused with peek of next card) */}
         <div className="sm:hidden -mx-5 px-5 flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-none">
           {images.signatureDishes.map((dish) => (
             <div
               key={dish.id}
-              className="w-[84vw] shrink-0 snap-center"
+              className="w-[78vw] max-w-xs shrink-0 snap-center"
             >
               <TiltCard dish={dish} />
             </div>

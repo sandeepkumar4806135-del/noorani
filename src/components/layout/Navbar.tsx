@@ -63,30 +63,30 @@ export const Navbar: React.FC = () => {
     <>
       <header
         className={`sticky top-0 z-40 w-full bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E6DEC9] transition-transform duration-300 ${
-          mobileHidden ? "-translate-y-full md:translate-y-0" : "translate-y-0"
+          mobileHidden ? "-translate-y-full lg:translate-y-0" : "translate-y-0"
         }`}
       >
         <div
-          className={`max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex items-center justify-between gap-4 transition-all duration-300 ${
-            isScrolled ? "h-16 shadow-xs" : "h-20"
+          className={`max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between gap-4 transition-all duration-300 ${
+            isScrolled ? "h-14 sm:h-16 lg:h-16 shadow-xs" : "h-16 sm:h-18 lg:h-20"
           }`}
         >
           {/* Zone 1: Brand Logo & Title */}
           <Link
             to="/"
-            className="flex items-center gap-3 shrink-0 focus-visible:outline-2 focus-visible:outline-[#15472A] rounded-sm group py-1"
+            className="flex items-center gap-2.5 sm:gap-3 shrink-0 focus-visible:outline-2 focus-visible:outline-[#15472A] rounded-sm group py-1"
           >
             <img
               src={siteConfig.logoUrl}
               alt="Noorani Restaurant Monogram Logo"
               className={`rounded-full object-contain border border-[#D49B28]/40 group-hover:scale-105 transition-all ${
-                isScrolled ? "w-9 h-9 sm:w-10 sm:h-10" : "w-11 h-11 sm:w-12 sm:h-12"
+                isScrolled ? "w-8 h-8 sm:w-10 sm:h-10" : "w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12"
               }`}
             />
             <div className="flex flex-col">
               <span
                 className={`font-serif font-bold tracking-tight text-[#15472A] leading-none group-hover:text-[#0D2D1B] transition-all ${
-                  isScrolled ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
+                  isScrolled ? "text-base sm:text-xl" : "text-lg sm:text-2xl"
                 }`}
               >
                 {siteConfig.restaurantName}
@@ -97,9 +97,9 @@ export const Navbar: React.FC = () => {
             </div>
           </Link>
 
-          {/* Zone 2: Navigation Links (Desktop) */}
+          {/* Zone 2: Navigation Links (Desktop 1024px and up) */}
           <nav
-            className="hidden md:flex items-center gap-4 lg:gap-6 text-sm font-medium text-[#383D35]"
+            className="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium text-[#383D35]"
             aria-label="Main Navigation"
           >
             {navLinks.map((link) => (
@@ -130,7 +130,7 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Zone 3: Primary Action & Phone CTA */}
+          {/* Zone 3: Primary Action & Phone CTA (Desktop 1024px and up) */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Direct Call Button */}
             <a
@@ -151,12 +151,12 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Action & Hamburger Toggle */}
-          <div className="flex items-center gap-1.5 md:hidden">
+          {/* Mobile & Tablet Action & Hamburger Toggle (<1024px) */}
+          <div className="flex items-center gap-1 sm:gap-1.5 lg:hidden">
             <a
               href={siteConfig.phoneLink}
               aria-label="Call Noorani Restaurant"
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#C52C24] hover:bg-[#C52C24]/10 rounded-full"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#C52C24] hover:bg-[#C52C24]/10 rounded-full active:scale-95 transition-transform"
             >
               <Phone className="w-5 h-5" />
             </a>
@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(true)}
               aria-expanded={mobileMenuOpen}
               aria-label="Open navigation menu"
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#15472A] hover:bg-[#15472A]/10 rounded-md cursor-pointer"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#15472A] hover:bg-[#15472A]/10 rounded-md cursor-pointer active:scale-95 transition-transform"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -174,14 +174,14 @@ export const Navbar: React.FC = () => {
         {/* Thin Gold Scroll-Progress Line under header on desktop */}
         <motion.div
           style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
-          className="hidden md:block absolute bottom-0 left-0 right-0 h-[2px] bg-[#D49B28] pointer-events-none"
+          className="hidden lg:block absolute bottom-0 left-0 right-0 h-[2px] bg-[#D49B28] pointer-events-none"
         />
       </header>
 
-      {/* ── Mobile Slide-in Drawer with Backdrop ── */}
+      {/* ── Mobile Slide-in Drawer with Backdrop (<1024px) ── */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 md:hidden flex justify-end"
+          className="fixed inset-0 z-50 lg:hidden flex justify-end"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
@@ -194,7 +194,7 @@ export const Navbar: React.FC = () => {
           />
 
           {/* Drawer Content */}
-          <div className="relative w-4/5 max-w-sm h-full bg-[#FAF7F2] border-l border-[#E6DEC9] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto z-10 animate-in slide-in-from-right duration-250">
+          <div className="relative w-4/5 max-w-sm h-[100dvh] bg-[#FAF7F2] border-l border-[#E6DEC9] px-6 pt-[max(1.25rem,env(safe-area-inset-top))] pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-2xl flex flex-col justify-between overflow-y-auto z-10 animate-in slide-in-from-right duration-250">
             <div>
               {/* Header inside drawer */}
               <div className="flex items-center justify-between pb-4 border-b border-[#E6DEC9]">

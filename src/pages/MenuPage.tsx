@@ -259,8 +259,8 @@ export const MenuPage: React.FC = () => {
         </Container>
       </section>
 
-      {/* ── Sticky Filter & Search Toolbar ── */}
-      <div className="sticky top-16 md:top-20 z-30 bg-[#FAF7F2]/98 backdrop-blur-md border-b border-[#E6DEC9] shadow-xs py-3 sm:py-3.5 transition-all">
+      {/* ── Sticky Filter & Search Toolbar (Height capped <=112px on mobile) ── */}
+      <div className="sticky top-14 sm:top-16 lg:top-16 z-30 bg-[#FAF7F2]/98 backdrop-blur-md border-b border-[#E6DEC9] shadow-xs py-2 sm:py-3 transition-all">
         <Container size="wide">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
             {/* Search Input */}
@@ -515,8 +515,8 @@ export const MenuPage: React.FC = () => {
                                 </div>
                               )}
 
-                              {/* Compact list rows (NO individual scroll animations) */}
-                              <div className="divide-y divide-[#EAE3D2]">
+                              {/* Responsive list: 1 col on phones, 2 cols on tablet/desktop from md (768px) */}
+                              <div className="divide-y divide-[#EAE3D2] md:divide-y-0 md:grid md:grid-cols-2 md:gap-x-6 lg:gap-x-10">
                                 {sub.items.map((item) => (
                                   <MenuItemCard key={item.id} item={item} />
                                 ))}
@@ -534,12 +534,12 @@ export const MenuPage: React.FC = () => {
         </Container>
       </section>
 
-      {/* ── Floating In-Page Back-To-Top Button ── */}
+      {/* ── Floating In-Page Back-To-Top Button (Clear of mobile bottom bar & tablet WhatsApp) ── */}
       {showBackToTop && (
         <button
           onClick={handleScrollToTop}
           aria-label="Back to top of menu"
-          className="fixed bottom-24 right-5 sm:right-8 z-40 p-3 bg-[#15472A] hover:bg-[#0D2D1B] text-white rounded-full shadow-lg transition-transform active:scale-95 cursor-pointer flex items-center justify-center min-w-[44px] min-h-[44px]"
+          className="fixed bottom-20 md:bottom-22 right-4 sm:right-6 z-40 p-3 bg-[#15472A] hover:bg-[#0D2D1B] text-white rounded-full shadow-lg transition-transform active:scale-95 cursor-pointer flex items-center justify-center min-w-[44px] min-h-[44px]"
         >
           <ArrowUp className="w-5 h-5 text-[#E8C872]" />
         </button>
