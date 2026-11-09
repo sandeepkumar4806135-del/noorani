@@ -39,8 +39,8 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Family Dining, Authentic Mughlai & Tandoor in Mumbra"
-        description="Noorani Family Restaurant in Mumbra, Thane serves Indian, Mughlai, Chinese, and Tandoori dishes. A/C Family Hall, Dining Hall, and Dastarkhwan available."
+        title="Home — Noorani Family Restaurant | Mumbra"
+        description="Family restaurant in Kausa, Mumbra serving Indian, Mughlai, Chinese and Tandoori food. Halal, no beef, free home delivery. Call 99679 46436."
         canonicalPath="/"
       />
 
@@ -169,6 +169,7 @@ export const HomePage: React.FC = () => {
             </Button>
             <a
               href={siteConfig.phoneLink}
+              aria-label={siteConfig.phoneAriaLabel}
               className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#FAF7F2] bg-white/10 hover:bg-white/20 border border-white/20 px-5 py-3 rounded-md transition-colors"
             >
               <Phone className="w-4 h-4 text-[#E8C872]" />
@@ -243,6 +244,7 @@ export const HomePage: React.FC = () => {
                     <h3 className="text-xs uppercase tracking-wider font-bold text-[#15472A]">Telephone & Home Delivery</h3>
                     <a
                       href={siteConfig.phoneLink}
+                      aria-label={siteConfig.phoneAriaLabel}
                       className="text-sm font-semibold text-[#15472A] hover:text-[#C52C24] transition-colors py-1 inline-block"
                     >
                       {siteConfig.phone}

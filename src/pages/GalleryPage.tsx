@@ -39,8 +39,8 @@ export const GalleryPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="From the Menu - Photo Gallery · Noorani Family Restaurant"
-        description="View culinary photos of dishes from the Noorani menu in Mumbra, Thane. Dum Biryani, tandoori kebabs, rich Mughlai curries, and sizzling platters."
+        title="Gallery — Noorani Family Restaurant | Mumbra"
+        description="View authentic dish photos from Noorani Family Restaurant in Mumbra. Charcoal tandoori platters, slow-dum biryani, and rich Mughlai specialties. Halal."
         canonicalPath="/gallery"
       />
 

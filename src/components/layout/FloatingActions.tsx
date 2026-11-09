@@ -36,6 +36,7 @@ export const FloatingActions: React.FC = () => {
       >
         <a
           href={siteConfig.phoneLink}
+          aria-label={siteConfig.phoneAriaLabel}
           className="flex-1 min-h-[46px] flex items-center justify-center gap-2 bg-[#15472A] active:bg-[#0D2D1B] text-white py-2.5 px-3 rounded-md text-xs font-semibold shadow-xs active:scale-[0.98] transition-transform"
         >
           <Phone className="w-4 h-4 text-[#E8C872]" />

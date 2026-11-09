@@ -194,8 +194,8 @@ export const MenuPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Restaurant Menu - Noorani Family Restaurant Mumbra"
-        description="Browse the complete dining and takeaway menu of Noorani Family Restaurant in Mumbra, Thane. Tandoori starters, Dum Biryani, Khapsa, Batair, Tawa Takatak, Seafood, and Mughlai curries."
+        title="Menu — Noorani Family Restaurant | Mumbra"
+        description="Explore the complete menu of Noorani Family Restaurant in Kausa, Mumbra. Indian curries, Mughlai dum biryanis, tandoor kebabs, and Chinese dishes. Halal."
         canonicalPath="/menu"
       />
 
@@ -248,9 +248,10 @@ export const MenuPage: React.FC = () => {
                 <a
                   key={del.id}
                   href={del.link}
-                  className="inline-flex items-center gap-1.5 bg-white border border-[#DCD0B7] hover:border-[#15472A] px-2.5 py-1 rounded text-xs font-bold text-[#15472A] hover:text-[#C52C24] transition-colors shadow-2xs min-h-[38px]"
+                  aria-label={del.ariaLabel}
+                  className="inline-flex items-center gap-1.5 bg-white border border-[#DCD0B7] hover:border-[#15472A] px-3 py-2 rounded text-xs font-bold text-[#15472A] hover:text-[#C52C24] transition-colors shadow-2xs min-h-[44px]"
                 >
-                  <Phone className="w-3 h-3 text-[#C52C24]" />
+                  <Phone className="w-3.5 h-3.5 text-[#C52C24]" />
                   <span>{del.number}</span>
                 </a>
               ))}

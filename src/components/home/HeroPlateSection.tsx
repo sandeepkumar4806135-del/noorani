@@ -562,6 +562,7 @@ export const HeroPlateSection: React.FC = () => {
               <MagneticWrapper className="w-full sm:w-auto">
                 <a
                   href={siteConfig.phoneLink}
+                  aria-label={siteConfig.phoneAriaLabel}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#FAF7F2] hover:text-[#E8C872] px-4 py-3 rounded-xs min-h-[46px] transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#C52C24]" />

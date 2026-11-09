@@ -134,8 +134,8 @@ export const ReservationsPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Reserve a Table - Noorani Family Restaurant · Mumbra"
-        description="Book your dining table at Noorani Family Restaurant in Mumbra, Thane. Reserve seats in our A/C Family Hall, Dining Hall, or Dastarkhwan. Open 24 hours (Closed Fridays)."
+        title="Reservations — Noorani Family Restaurant | Mumbra"
+        description="Reserve your family dining table at Noorani Family Restaurant in Kausa, Mumbra. A/C Family Hall and Dastarkhwan seating. Open 24 hours (closed Fridays)."
         canonicalPath="/reservations"
       />
 
@@ -200,6 +200,7 @@ export const ReservationsPage: React.FC = () => {
                   <p className="text-xs text-[#71776C] mb-2 font-medium">Need immediate table confirmation?</p>
                   <a
                     href={siteConfig.phoneLink}
+                    aria-label={siteConfig.phoneAriaLabel}
                     className="inline-flex items-center gap-2 text-sm font-bold text-[#C52C24] hover:text-[#9A1E17] transition-colors min-h-[44px]"
                   >
                     <Phone className="w-4 h-4" />
@@ -221,6 +222,7 @@ export const ReservationsPage: React.FC = () => {
                     <a
                       key={del.id}
                       href={del.link}
+                      aria-label={del.ariaLabel}
                       className="bg-white border border-[#DACDB3] px-3 py-2.5 rounded text-center hover:border-[#15472A] text-xs min-h-[44px] flex items-center justify-center tabular-nums shadow-2xs"
                     >
                       {del.number}

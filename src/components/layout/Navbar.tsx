@@ -135,6 +135,7 @@ export const Navbar: React.FC = () => {
             {/* Direct Call Button */}
             <a
               href={siteConfig.phoneLink}
+              aria-label={siteConfig.phoneAriaLabel}
               className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#15472A] hover:text-[#0D2D1B] px-3 py-2.5 rounded min-h-[44px] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#C52C24]" />
@@ -155,7 +156,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-1 sm:gap-1.5 lg:hidden">
             <a
               href={siteConfig.phoneLink}
-              aria-label="Call Noorani Restaurant"
+              aria-label={siteConfig.phoneAriaLabel}
               className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#C52C24] hover:bg-[#C52C24]/10 rounded-full active:scale-95 transition-transform"
             >
               <Phone className="w-5 h-5" />
@@ -258,6 +259,7 @@ export const Navbar: React.FC = () => {
             <div className="pt-4 border-t border-[#E6DEC9] space-y-2.5">
               <a
                 href={siteConfig.phoneLink}
+                aria-label={siteConfig.phoneAriaLabel}
                 className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 bg-[#15472A] text-white text-sm font-semibold rounded-sm shadow-xs"
               >
                 <Phone className="w-4 h-4 text-[#E8C872]" />

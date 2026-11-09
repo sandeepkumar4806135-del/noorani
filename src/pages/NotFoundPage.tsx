@@ -15,8 +15,8 @@ export const NotFoundPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Page Not Found"
-        description="The page you are looking for does not exist. Return to the Noorani Family Restaurant home page."
+        title="404: Page Not Found — Noorani Family Restaurant | Mumbra"
+        description="The requested page was not found. Return to Noorani Family Restaurant in Kausa, Mumbra for authentic Indian, Mughlai, Chinese, and Tandoori dining."
         canonicalPath="/404"
       />
 

@@ -48,14 +48,26 @@ export const HomeDeliveryStrip: React.FC = () => {
             </div>
           </div>
 
-          {/* View Menu CTA */}
-          <Link
-            to="/menu"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#15472A] hover:bg-[#0D2D1B] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shadow-xs min-h-[44px] shrink-0 active:scale-[0.99]"
-          >
-            <span>View Menu & Order</span>
-            <ArrowRight className="w-4 h-4 text-[#E8C872]" />
-          </Link>
+          {/* CTAs: WhatsApp Delivery + View Menu */}
+          <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+            <a
+              href={siteConfig.whatsappDeliveryLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Order for home delivery on WhatsApp"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shadow-xs min-h-[44px] shrink-0 active:scale-[0.99]"
+            >
+              <span>Order on WhatsApp</span>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </a>
+            <Link
+              to="/menu"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#15472A] hover:bg-[#0D2D1B] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors shadow-xs min-h-[44px] shrink-0 active:scale-[0.99]"
+            >
+              <span>View Menu</span>
+              <ArrowRight className="w-4 h-4 text-[#E8C872]" />
+            </Link>
+          </div>
         </div>
 
         {/* Four Number Cards: 1 col on phones, 2 cols on 600px, 4 cols on >=1024px */}
@@ -64,6 +76,7 @@ export const HomeDeliveryStrip: React.FC = () => {
             <a
               key={del.id}
               href={del.link}
+              aria-label={del.ariaLabel}
               className="group relative bg-white border border-[#DDD3BF] hover:border-[#15472A] p-3.5 sm:p-4 rounded-sm flex items-center justify-between transition-all duration-200 hover:shadow-md min-h-[58px]"
             >
               <div className="flex items-center gap-3">

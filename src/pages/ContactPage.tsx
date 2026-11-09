@@ -5,18 +5,58 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle, ChevronDown, HelpCircle } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { FormField } from "../components/ui/FormField";
 import { Button } from "../components/ui/Button";
-import { SEO } from "../components/ui/SEO";
+import { SEO, FAQItem } from "../components/ui/SEO";
 import { siteConfig } from "../data/siteConfig";
 import { contactService, ContactData, ContactRecord } from "../services/contactService";
 import { useMotionLevel, fadeUpVariant, staggerContainerVariant } from "../config/motion";
 
+export const CONTACT_FAQS: FAQItem[] = [
+  {
+    question: "Is Noorani Family Restaurant 100% Halal?",
+    answer: "Yes, all poultry and meat dishes served at Noorani Family Restaurant are strictly 100% Halal. We adhere strictly to authentic Halal preparation standards across our entire kitchen."
+  },
+  {
+    question: "Does Noorani serve beef?",
+    answer: "No. Noorani Family Restaurant strictly does not serve beef on the premises. Our menu features chicken, mutton, seafood, and vegetarian preparations only."
+  },
+  {
+    question: "What are your restaurant opening hours and weekly closing day?",
+    answer: "We are open 24 hours daily from Saturday through Thursday to serve dine-in and delivery guests. Noorani is closed on Fridays."
+  },
+  {
+    question: "Do you offer free home delivery, and what areas are covered?",
+    answer: "Yes, we provide free home delivery across Mumbra and Kausa. You can place an order directly with our kitchen dispatch by calling 99679 46436, 84250 46436, 98337 58865, or 98929 36436."
+  },
+  {
+    question: "What dining hall facilities and seating arrangements are available?",
+    answer: "We offer three distinct dining experiences: an air-conditioned A/C Family Hall for comfortable family dining, a spacious Main Dining Hall, and a traditional carpeted floor-seating Dastarkhwan Hall."
+  },
+  {
+    question: "Can I reserve a table or family hall in advance?",
+    answer: "Yes, advance table reservations and private hall inquiries can be placed online through our Reservations page or by calling our counter directly at 99679 46436."
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept all major credit and debit cards, digital UPI payments via Google Pay, PhonePe, and Paytm, as well as cash payments at the counter and on delivery."
+  },
+  {
+    question: "Do you cater for family functions, party orders, and bulk deghs?",
+    answer: "Yes, our kitchen prepares authentic biryani deghs and bulk catering platters for family gatherings, weddings, and corporate events. Contact our counter at 99679 46436 to plan your menu."
+  },
+  {
+    question: "Where is Noorani Family Restaurant located in Mumbra?",
+    answer: "We are located at Shop No. 1 and 2, Afreen Apartment, opposite Axis Bank, Tanwar Nagar, Kausa, Mumbra, Thane 400612."
+  }
+];
+
 export const ContactPage: React.FC = () => {
   const motionLevel = useMotionLevel();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState<ContactData>({
     name: "",
     phone: "",
@@ -89,9 +129,10 @@ export const ContactPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Contact Us & Location - Noorani Family Restaurant · Mumbra"
-        description="Get in touch with Noorani Family Restaurant in Tanwar Nagar, Kausa, Mumbra. Direct phone, WhatsApp, and 4 free home delivery lines."
+        title="Contact 99679 46436 — Noorani Family Restaurant | Mumbra"
+        description="Contact Noorani Family Restaurant in Tanwar Nagar, Kausa, Mumbra. Call 99679 46436 for table reservations and 4 free home delivery lines across Mumbra."
         canonicalPath="/contact"
+        faqList={CONTACT_FAQS}
       />
 
       {/* ── Page Header ── */}
@@ -108,7 +149,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       {/* ── 4 Quick Contact Cards with Gentle Hover ── */}
-      <section className="py-12 sm:py-20 bg-[#FAF7F2] pb-24 md:pb-24">
+      <section className="py-12 sm:py-20 bg-[#FAF7F2] pb-12">
         <Container size="wide">
           <motion.div
             variants={motionLevel === "off" ? undefined : staggerContainerVariant}
@@ -133,6 +174,7 @@ export const ContactPage: React.FC = () => {
               </div>
               <a
                 href={siteConfig.phoneLink}
+                aria-label={siteConfig.phoneAriaLabel}
                 className="mt-4 text-xs font-bold text-[#C52C24] hover:underline min-h-[44px] flex items-center"
               >
                 Call Now →
@@ -224,6 +266,7 @@ export const ContactPage: React.FC = () => {
                   <a
                     key={del.id}
                     href={del.link}
+                    aria-label={del.ariaLabel}
                     className="inline-flex items-center gap-1.5 bg-white border border-[#DACDB3] hover:border-[#15472A] px-3.5 py-2 rounded text-xs font-bold text-[#15472A] hover:text-[#C52C24] transition-colors shadow-2xs min-h-[44px]"
                   >
                     <Phone className="w-3.5 h-3.5 text-[#C52C24]" />
@@ -409,6 +452,57 @@ export const ContactPage: React.FC = () => {
                 />
               </motion.div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Frequently Asked Questions Accordion ── */}
+      <section className="py-12 sm:py-16 bg-[#F4EEDF] border-t border-[#E5DAC1]">
+        <Container size="default">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15472A]/10 text-[#15472A] text-xs font-bold uppercase tracking-wider mb-3">
+              <HelpCircle className="w-3.5 h-3.5 text-[#B37E1C]" />
+              <span>Questions & Answers</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#15472A]">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-sm text-[#5D6558] mt-2">
+              Everything you need to know about dining, halal standards, reservations, and free home delivery at Noorani in Mumbra.
+            </p>
+          </div>
+
+          <div className="space-y-3 max-w-3xl mx-auto">
+            {CONTACT_FAQS.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-[#E8DFC9] rounded-md overflow-hidden shadow-2xs transition-colors hover:border-[#D49B28]"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                    className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 focus:outline-none min-h-[44px]"
+                    aria-expanded={isOpen}
+                  >
+                    <h3 className="font-serif text-base sm:text-lg font-bold text-[#15472A] pr-2">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={`w-5 h-5 text-[#B37E1C] shrink-0 transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 text-sm text-[#4E5649] leading-relaxed border-t border-[#F5EFE3]">
+                      <p className="pt-3">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

@@ -16,6 +16,7 @@ export interface DeliveryContact {
   label: string;
   number: string;
   link: string;
+  ariaLabel: string;
 }
 
 export interface DiningHallInfo {
@@ -41,13 +42,19 @@ export interface SiteConfig {
   tagline: string;
   restaurantType: string;
   cuisines: string[];
+
+  // Website Address & Indexing Mode
+  siteUrl: string;
+  allowSearchIndexing: boolean;
   
   // Primary Contact
   phone: string;
   phoneRaw: string;
   phoneLink: string;
+  phoneAriaLabel: string;
   whatsappNumber: string;
   whatsappLink: string;
+  whatsappDeliveryLink: string;
 
   // Free Home Delivery Phone Numbers (Printed on client menu)
   deliveryPhones: DeliveryContact[];
@@ -132,25 +139,33 @@ export const siteConfig: SiteConfig = {
   restaurantType: "Family Restaurant",
   cuisines: ["Indian", "Mughlai", "Chinese", "Tandoori"],
 
+  // TEMPORARY address. CHANGE THIS ONE LINE when the final domain is ready.
+  siteUrl: "https://noorani-chi.vercel.app",
+
+  // Set to true only when the site is on its final domain.
+  allowSearchIndexing: false,
+
   // Primary Phone & WhatsApp
   phone: "99679 46436",
   phoneRaw: "+919967946436",
   phoneLink: "tel:+919967946436",
+  phoneAriaLabel: "Call Noorani on 99679 46436",
   whatsappNumber: "99679 46436",
-  whatsappLink: "https://wa.me/919967946436",
+  whatsappLink: "https://wa.me/919967946436?text=" + encodeURIComponent("Hello Noorani, I would like to place an order."),
+  whatsappDeliveryLink: "https://wa.me/919967946436?text=" + encodeURIComponent("Hello Noorani, I would like to order for home delivery."),
 
   // Free Home Delivery Numbers (All 4 printed on client's menu)
   deliveryPhones: [
-    { id: "del-1", label: "Line 1", number: "99679 46436", link: "tel:+919967946436" },
-    { id: "del-2", label: "Line 2", number: "84250 46436", link: "tel:+918425046436" },
-    { id: "del-3", label: "Line 3", number: "98337 58865", link: "tel:+919833758865" },
-    { id: "del-4", label: "Line 4", number: "98929 36436", link: "tel:+919892936436" }
+    { id: "del-1", label: "Line 1", number: "99679 46436", link: "tel:+919967946436", ariaLabel: "Call Noorani on 99679 46436" },
+    { id: "del-2", label: "Line 2", number: "84250 46436", link: "tel:+918425046436", ariaLabel: "Call Noorani on 84250 46436" },
+    { id: "del-3", label: "Line 3", number: "98337 58865", link: "tel:+919833758865", ariaLabel: "Call Noorani on 98337 58865" },
+    { id: "del-4", label: "Line 4", number: "98929 36436", link: "tel:+919892936436", ariaLabel: "Call Noorani on 98929 36436" }
   ],
 
   locationCity: "Mumbra, Thane",
   currencySymbol: "₹",
   currencyCode: "INR",
-  logoUrl: "/assets/aistudio/logo-from-pdf_f347500e.png",
+  logoUrl: "/icon-192.png",
 
   // Real Address details
   // CONFIRM shop numbers with client
@@ -274,6 +289,15 @@ export function isRestaurantClosedOnDay(date: Date | string): boolean {
   const d = typeof date === "string" ? new Date(date) : date;
   if (isNaN(d.getTime())) return false;
   return siteConfig.openingHours.closedDays.includes(d.getDay());
+}
+
+/**
+ * Helper to build absolute URLs using the central siteUrl setting.
+ */
+export function getAbsoluteUrl(path: string = ""): string {
+  if (!path || path === "/") return siteConfig.siteUrl;
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${siteConfig.siteUrl}${cleanPath}`;
 }
 
 export default siteConfig;

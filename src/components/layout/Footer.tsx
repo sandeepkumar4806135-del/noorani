@@ -146,6 +146,7 @@ export const Footer: React.FC = () => {
                   <a
                     key={del.id}
                     href={del.link}
+                    aria-label={del.ariaLabel}
                     className="inline-flex items-center gap-2 bg-[#143B22] hover:bg-[#1C4E2D] p-2.5 rounded min-h-[44px] text-[#FAF7F2] hover:text-[#E8C872] transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5 text-[#C52C24] shrink-0" />
@@ -157,9 +158,15 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2.5 pt-2">
                 <MapPin className="w-4 h-4 text-[#C52C24] shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs text-[#B5C4B9] leading-relaxed">
+                  <a
+                    href={siteConfig.googleMapsDirectionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open Noorani Family Restaurant in Google Maps"
+                    className="text-xs text-[#B5C4B9] hover:text-[#E8C872] leading-relaxed transition-colors block"
+                  >
                     {siteConfig.address}
-                  </p>
+                  </a>
                 </div>
               </div>
 

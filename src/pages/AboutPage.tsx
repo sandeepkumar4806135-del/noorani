@@ -31,8 +31,8 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Our Story & Halls - Noorani Family Restaurant Mumbra"
-        description="Learn about the culinary traditions of Noorani Family Restaurant in Mumbra, Thane. Featuring our A/C Family Hall, Main Dining Hall, and traditional Dastarkhwan floor dining."
+        title="About — Noorani Family Restaurant | Mumbra"
+        description="Discover Noorani Family Restaurant in Kausa, Mumbra. Featuring an A/C Family Hall, Main Dining Hall, and Dastarkhwan floor seating. Open 24 hours daily."
         canonicalPath="/about"
       />
 
