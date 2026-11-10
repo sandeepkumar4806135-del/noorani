@@ -17,7 +17,37 @@ export interface AppImage {
   category?: string;
 }
 
+/**
+ * 4 Rotating Plate Images for the "What We Cook" Scroll Story Section on the Home Page.
+ * To update or replace any scroll story plate image, edit the entries below in src/data/images.ts.
+ */
+export const storyPlateImages = {
+  mughlai: {
+    src: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=80",
+    alt: "Butter chicken in a bowl, for illustration",
+    title: "Mughlai & Handi"
+  },
+  tandoori: {
+    src: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80",
+    alt: "Charcoal tandoori kebabs on a platter, for illustration",
+    title: "Tandoori & Kabab"
+  },
+  chinese: {
+    src: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80",
+    alt: "Wok-tossed noodles and Indo-Chinese chicken, for illustration",
+    title: "Chinese"
+  },
+  biryani: {
+    src: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1600&q=80",
+    alt: "Aromatic Mughlai dum biryani with seasoned rice, for illustration",
+    title: "Biryani & Rice"
+  }
+};
+
 export const images = {
+  // ── "What We Cook" Scroll Story Plate Images ──
+  storyPlate: storyPlateImages,
+
   // ── Hero Banner ──
   hero: {
     src: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1600&q=80",
@@ -85,7 +115,7 @@ export const images = {
       price: 450,
       isVeg: false,
       tag: "Signature Tandoor",
-      src: "https://images.unsplash.com/photo-1567184109411-b28f27034346?auto=format&fit=crop&w=700&q=80",
+      src: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80",
       alt: "Murgh Malai Cheese Tandoori baked in clay tandoor",
       description: "Tender chicken marinated in hung curd, fresh cream, cheese, and mild spices, charred to perfection."
     },
@@ -118,7 +148,7 @@ export const images = {
       price: 400,
       isVeg: false,
       tag: "Chef's Pride",
-      src: "https://images.unsplash.com/photo-1545247181-516773cae7be?auto=format&fit=crop&w=700&q=80",
+      src: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80",
       alt: "Noorani Special royal chicken gravy with rich cashews",
       description: "Our signature chicken delicacy cooked in royal cashew-saffron gravy with rich dry fruits."
     }
@@ -171,7 +201,7 @@ export const images = {
     },
     {
       id: "gal-4",
-      src: "https://images.unsplash.com/photo-1567184109411-b28f27034346?auto=format&fit=crop&w=900&q=80",
+      src: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=900&q=80",
       alt: "Paneer Tikka with bell peppers and mint chutney",
       title: "Tandoori Paneer Tikka",
       category: "Food"
@@ -185,7 +215,7 @@ export const images = {
     },
     {
       id: "gal-6",
-      src: "https://images.unsplash.com/photo-1545247181-516773cae7be?auto=format&fit=crop&w=900&q=80",
+      src: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
       alt: "Slow-cooked Kashmiri Mutton Rogan Josh in rich gravy",
       title: "Mutton Rogan Josh",
       category: "Food"
